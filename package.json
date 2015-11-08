@@ -1,0 +1,10 @@
+{
+  "name": "gitget",
+  "title": "GitGet",
+  "copyright": "2015",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "express": ""
+  }
+}

@@ -1,0 +1,34 @@
+<div class="col-md-3 sidebar">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <input type="text" placeholder="Git User ID..." class="form-control" ng-model="gitUserId"/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="addGitUser()">Add</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="git-users-list list-group">
+                <li class="list-group-item"
+                    ng-repeat="(key, user) in users">
+                    <a class="git-user-name"
+                       ng-class="{'active': key === selectedUser.user.login}"
+                       ng-click="showDetails(key)">{{key}}</a>
+                    <span class="label label-warning">{{user.allStars}}</span>
+                    <span class="label label-success" ng-if="key === maxRatedUser.userId">
+                        Most Rated
+                    </span>
+                    <div class="pull-right">
+                        <span aria-hidden="true"
+                              class="glyphicon glyphicon-remove icon-danger"
+                              ng-click="removeGitUser(key)"></span>
+                    </div>
+                </li>
+            </ul>
+            <div class="alert alert-danger" role="alert" ng-if="message.length">{{message}}</div>
+        </div>
+    </div>
+</div>

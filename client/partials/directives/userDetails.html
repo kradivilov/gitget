@@ -1,0 +1,54 @@
+<div class="details-block">
+    <!--START git user detail block -->
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">User Details</h3>
+            </div>
+            <div class="panel-body" ng-show="detailsBlockShow">
+                <div class="media">
+                    <div class="media-left">
+                        <img class="media-object" height="64" width=""
+                             ng-src="{{selectedUser.user.avatar_url}}" data-holder-rendered="true" />
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{selectedUser.user.name}} ({{selectedUser.user.login}})</h4>
+                        <ul class="user-properties">
+                            <li><b>User Type:</b> {{selectedUser.user.type}}</li>
+                            <li><b>Public Repos:</b> {{selectedUser.user.public_repos}}</li>
+                            <li><b>Followers:</b> {{selectedUser.user.followers}}</li>
+                            <li><b>Following:</b> {{selectedUser.user.following}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- END git user detail block -->
+
+    <!-- START git user repository block -->
+    <div class="col-md-7">
+        <div class="panel panel-default">
+            <div class="panel-heading">User Repositories</div>
+            <table class="table" ng-show="detailsBlockShow">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Language</th>
+                    <th>Forks</th>
+                    <th>Stars</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="repo in selectedUser.reps | orderObjectBy:'stargazers_count':'desc'">
+                    <td>{{$index + 1}}</td>
+                    <td><a href="{{repo.html_url}}" title="{{repo.name}}" target="_blank">{{repo.name}}</a></td>
+                    <td>{{repo.language}}</td>
+                    <td>{{repo.forks}}</td>
+                    <td>{{repo.stargazers_count}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- END git user repository block -->
+</div>

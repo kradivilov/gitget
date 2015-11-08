@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='gitGet'>
+<head>
+    <meta charset="UTF-8">
+    <title>GitGet</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/controllers.js"></script>
+    <script src="/js/directives.js"></script>
+    <script src="/js/services.js"></script>
+    <script src="/js/filters.js"></script>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <users-list></users-list>
+            <div class="col-md-9 col-md-offset-3 dashboard">
+                <div class="row"><user-details></user-details></div>
+                <div class="row"><compare-repositories></compare-repositories></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

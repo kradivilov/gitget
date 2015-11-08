@@ -1,0 +1,27 @@
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">Max Rated Users' Repositories</div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Owner Name</th>
+                <th>Name</th>
+                <th>Language</th>
+                <th>Forks</th>
+                <th>Stars</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="repo in maxRatedRepositories | orderObjectBy:'stargazers_count':'desc'">
+                <td>{{$index + 1}}</td>
+                <td>{{repo.owner.login}}</td>
+                <td>{{repo.name}}</td>
+                <td>{{repo.language}}</td>
+                <td>{{repo.forks}}</td>
+                <td>{{repo.stargazers_count}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
